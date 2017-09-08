@@ -13,6 +13,15 @@ The service uses the following environment variables:
 
 `POST /game/new`
 
+### Answer a question
+
+
+### Healthcheck
+`GET /internal/healthcheck`
+
+### Current Configuration
+`GET /internal/config`
+
 
 ## Tests
 
@@ -22,7 +31,8 @@ Run:
 
 
 
-TODO
+##TODO
+
 - [ ] Add Schema
 - [ ] Add Rollbar
 - [ ] Dockerise

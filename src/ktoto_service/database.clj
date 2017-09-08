@@ -1,27 +1,16 @@
 (ns ktoto-service.database
   (:require
     [ktoto-service.helpers.config :as config]
-    [clojure.data.json :as json]))
+    [clojure.data.json :as json]
+    [ktoto-service.helpers.config :as config]
+    [com.ashafa.clutch :as clutch]
+    [environ.core :refer [env]]))
 
-(def dummy-game
-  (json/write-str
-    {
-      :id "00001",
-      :choice-set [{
-              :choice-id  "001"
-              :choices ["Mary","Patricia","Linda"]
-              :correct-answer "Mary"
-        },
-        {
-          :choice-id "002"
-          :choices ["Barbara","Elizabeth","Jennifer"]
-          :correct-answer "Elizabeth"
-        },
-        {
-          :choice-id "003",
-          :choices ["Margaret","Dorothy","Lisa"]
-          :correct-answer "Lisa"
-        }]}))
+(def users-db-uri
+  (str config/couchdb-uri "/" config/couchdb-name))
+
+(defn fetch-user [user-id]
+  (clutch/get-document users-db-uri user-id))
 
 (defn fetch-game [game-id]
-  dummy-game)
+  nil)

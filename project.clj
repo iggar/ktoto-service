@@ -7,7 +7,8 @@
                  [org.clojure/java.jdbc "0.7.1"]
                  [environ "1.1.0"]
                  [metosin/compojure-api "1.1.11"]
-                 [org.clojure/data.json "0.2.6"]]
+                 [org.clojure/data.json "0.2.6"]
+                 [com.ashafa/clutch "0.4.0"]]
   :ring {:handler ktoto-service.handler/app}
   :main ktoto-service.main
   :uberjar-name "app.jar"
