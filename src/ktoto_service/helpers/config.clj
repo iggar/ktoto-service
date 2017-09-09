@@ -5,10 +5,10 @@
 
 (def port (Integer/parseInt (env :port "11001")))
 
-(def couchdb-uri
+(def db-uri
   (env :db-uri "http://localhost:5984"))
 
-(def couchdb-name
+(def db-name
   (env :db-name "people"))
 
 (def num-choices

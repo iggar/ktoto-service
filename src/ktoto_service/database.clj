@@ -6,11 +6,16 @@
     [com.ashafa.clutch :as clutch]
     [environ.core :refer [env]]))
 
-(def users-db-uri
-  (str config/couchdb-uri "/" config/couchdb-name))
+(def db-uri
+  (str config/db-uri "/" config/db-name))
+
+(defn create-database!
+  "Creates database if it's not available yet"
+  []
+  (clutch/get-database config/db-name))
 
 (defn fetch-user [user-id]
-  (clutch/get-document users-db-uri user-id))
+  (clutch/get-document db-uri user-id))
 
 (defn fetch-game [game-id]
   (json/read-str (slurp "resources/game_sample2.json") :key-fn keyword))
