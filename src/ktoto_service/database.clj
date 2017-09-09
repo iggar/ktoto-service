@@ -14,3 +14,6 @@
 
 (defn fetch-game [game-id]
   nil)
+
+(defn save-game []
+  nil)

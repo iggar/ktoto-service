@@ -9,7 +9,7 @@
   (env :db-uri "http://localhost:5984"))
 
 (def couchdb-name
-  (env :db-name "users"))
+  (env :db-name "people"))
 
 (def number-choices
   (env :num-choices 3))
