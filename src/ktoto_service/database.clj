@@ -13,7 +13,7 @@
   (clutch/get-document users-db-uri user-id))
 
 (defn fetch-game [game-id]
-  nil)
+  (json/read-str (slurp "resources/game_sample2.json") :key-fn keyword))
 
 (defn save-game []
   nil)
