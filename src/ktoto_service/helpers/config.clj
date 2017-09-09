@@ -3,7 +3,7 @@
     [clojure.string :as string]
     [environ.core :refer [env]]))
 
-(def port (Integer/parseInt (or (env :port) "11001")))
+(def port (Integer/parseInt (env :port "11001")))
 
 (def couchdb-uri
   (env :db-uri "http://localhost:5984"))
