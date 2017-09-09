@@ -5,7 +5,12 @@ A REST API for quiz game
 
 The service uses the following environment variables:
 
-`PORT`
+`PORT` - PORT number where the server will run (default: 11001).
+
+`NUM_QUESTIONS` - number of questions in the game (default: 5).
+
+`NUM_CHOICES` - number of choices per question (default: 3).
+
 
 ## Endpoints
 

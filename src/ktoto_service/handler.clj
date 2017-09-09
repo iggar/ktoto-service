@@ -12,10 +12,8 @@
       (ok {:status "This is fine"}))
     (GET "/internal/config" []
       (ok (config/all)))
-    (GET "/invernal/games" []
-      (ok (config/all)))
     (POST "/game/new" []
-      (ok (game/new-game config/number-choices (game/users))))
+      (ok (game/new-game (Integer. config/num-questions) (game/users))))
     (GET "/user" []
       :query-params [user-id :- String]
       (if-not (empty? user-id)

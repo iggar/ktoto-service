@@ -11,8 +11,11 @@
 (def couchdb-name
   (env :db-name "people"))
 
-(def number-choices
+(def num-choices
   (env :num-choices 3))
+
+(def num-questions
+  (env :num-questions 5))
 
 (defn all
   "List all the config variables used"

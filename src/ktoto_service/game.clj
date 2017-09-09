@@ -22,5 +22,5 @@
   [nquestions userscol]
   (loop [col [] n 0]
     (if (< n nquestions)
-      (recur (conj col (question (Integer. config/number-choices) userscol)) (inc n))
+      (recur (conj col (question (Integer. config/num-choices) userscol)) (inc n))
       col)))
