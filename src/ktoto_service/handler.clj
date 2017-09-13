@@ -1,7 +1,7 @@
 (ns ktoto-service.handler
   (:require [compojure.api.sweet :refer :all]
             [ring.util.http-response :refer :all]
-            [ktoto-service.database :as database]
+            [ktoto-service.database :as db]
             [ktoto-service.helpers.config :as config]
             [ktoto-service.game :as game]
             [schema.core :as s]))
@@ -20,7 +20,7 @@
         (do
           (print "Fetching user: " user-id)
           (ok
-            (database/fetch-user user-id)))
+            (db/fetch-user user-id)))
         (bad-request)))
     (GET "/game" []
       :query-params [game-id :- String]
@@ -28,5 +28,5 @@
         (do
           (print "Fetching game: " game-id)
           (ok
-            (database/fetch-game game-id)))
+            (db/fetch-game game-id)))
         (bad-request)))))
