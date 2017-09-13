@@ -18,7 +18,7 @@
   (clutch/get-document db-uri user-id))
 
 (defn fetch-game [game-id]
-  (json/read-str (slurp "resources/game_sample2.json") :key-fn keyword))
+  (json/read-str (slurp "resources/game_sample.json") :key-fn keyword))
 
 (defn save-game [game]
-  (:_id (clutch/put-document db-uri {:question game :datetimestamp (java.util.Date.)})))
+  (:_id (clutch/put-document db-uri {:questions game :datetimestamp (java.util.Date.)})))

@@ -38,6 +38,6 @@
   "Checks whether the player answer is correct for the given question"
   [question-id choice]
   (let [game (db/fetch-game nil)
-        correct-answer (:answer (nth game question-id))
-        user-answer (:photo (nth (:choices (nth game question-id)) choice))]
+        correct-answer (:answer (nth (:questions game) question-id))
+        user-answer (:photo (nth (:choices (nth (:questions game) question-id)) choice))]
     (= correct-answer user-answer)))
